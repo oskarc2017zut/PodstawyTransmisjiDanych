@@ -8,9 +8,31 @@
         xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Class="LabXTemplate.MainWindow"
         mc:Ignorable="d"
     ResizeMode="CanResizeWithGrip"
-        Title="Podstawy transmisji danych 2017 Lab X" Height="350" Width="525" ShowMaxRestoreButton="True" IsManipulationEnabled="True" TitleCharacterCasing="Normal"
+    Icon="../world-wide-internet-signal.ico"
+    
+        Title="Podstawy transmisji danych 2017 Lab X" Height="400" Width="625" ShowMaxRestoreButton="True" IsManipulationEnabled="True" TitleCharacterCasing="Normal"
                       ShowIconOnTitleBar="True" >
-    <Grid/>
-    
-    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="auto"/>
+
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="0"  Grid.Row="0" Background="#FF393939">
+            <StackPanel Background="#FF1E1E1E">
+                <Button Content="Start" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover"/>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Controls:MetroProgressBar Value="75"   />
+        </StackPanel>
+        
+
+    </Grid>
+
+
 </Controls:MetroWindow>
