@@ -11,29 +11,77 @@
     Icon="../world-wide-internet-signal.ico"
     
         Title="Podstawy transmisji danych 2017 Lab X" Height="400" Width="625" ShowMaxRestoreButton="True" IsManipulationEnabled="True" TitleCharacterCasing="Normal"
-                      ShowIconOnTitleBar="True" >
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="100" />
-        </Grid.RowDefinitions>
-        <Grid>
+                      ShowIconOnTitleBar="True" WindowState="Maximized" >
+    
+    <TabControl>
+        <TabItem Header="Home">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="auto"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-        </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Column="0"  Grid.Row="0" Background="#FF393939">
-            <StackPanel Background="#FF1E1E1E">
-                <Button Content="Start" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover"/>
-            </StackPanel>
-        </ScrollViewer>
+                    <ScrollViewer Grid.Column="0"  Grid.Row="0" Background="#FF393939">
+                        <StackPanel Background="#FF1E1E1E">
+                            <Button Content="Start" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover"/>
+                        </StackPanel>
+                    </ScrollViewer>
 
-        
+                    <TabControl Grid.Column="1" Grid.ColumnSpan="1">
+                        <TabItem Header="Chart#1">
+                            <TabControl>
+                                <TabItem Header="Chart"></TabItem>
+                                <TabItem Header="Data"></TabItem>
+                            </TabControl>
+                        </TabItem>
+                         <TabItem Header="Chart#2">
+                            <TabControl>
+                                <TabItem Header="Chart"></TabItem>
+                                <TabItem Header="Data"></TabItem>
+                            </TabControl>
+                        </TabItem>
+                         <TabItem Header="Chart#3">
+                            <TabControl>
+                                <TabItem Header="Chart"></TabItem>
+                                <TabItem Header="Data"></TabItem>
+                            </TabControl>
+                        </TabItem>
+                         <TabItem Header="Chart#4">
+                            <TabControl>
+                                <TabItem Header="Chart"></TabItem>
+                                <TabItem Header="Data"></TabItem>
+                            </TabControl>
+                        </TabItem>
+                        
+                    </TabControl>
 
-    </Grid>
-        
-    </Grid>
+
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel>
+                        <TextBox />
+                        <Controls:MetroProgressBar Value="100" Height="10"></Controls:MetroProgressBar>
+
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Logs">
+            
+        </TabItem>
+
+        <TabItem Header="Settings">
+
+        </TabItem>
+    </TabControl>
 
 </Controls:MetroWindow>
+
