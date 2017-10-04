@@ -17,6 +17,8 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
+        <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="auto"/>
@@ -27,12 +29,11 @@
                 <Button Content="Start" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover"/>
             </StackPanel>
         </ScrollViewer>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-            <Controls:MetroProgressBar Value="75"   />
-        </StackPanel>
+
         
 
     </Grid>
-
+        
+    </Grid>
 
 </Controls:MetroWindow>
