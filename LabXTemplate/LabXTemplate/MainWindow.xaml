@@ -39,10 +39,10 @@
                     </ScrollViewer>
 
                     <TabControl Grid.Column="1" Grid.ColumnSpan="1">
-                        <TabItem Header="Chart#1">
+                        <TabItem Header="ChartName#1">
                             <TabControl>
                                 <TabItem Header="Chart">
-                                    <oxy:Plot LegendBackground="Chartreuse" PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526">
+                                    <oxy:Plot LegendBackground="Chartreuse" PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
                                         <oxy:Plot.Axes>
                                             <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
                                             <oxy:LinearAxis Title="Y" Position="Left"/>
@@ -53,23 +53,23 @@
                                     </oxy:Plot>
                                 </TabItem>
                                 <TabItem Header="Data">
-                                    <pt:DataGrid Margin="0 8 0 0" ItemsSource="{Binding Data}" CanInsert="False" CanDelete="False"/>
+                                    <DataGrid Margin="0 8 0 0" ItemsSource="{Binding Data}"/>
                                 </TabItem>
                             </TabControl>
                         </TabItem>
-                         <TabItem Header="Chart#2">
+                        <TabItem Header="ChartName#2">
                             <TabControl>
                                 <TabItem Header="Chart"></TabItem>
                                 <TabItem Header="Data"></TabItem>
                             </TabControl>
                         </TabItem>
-                         <TabItem Header="Chart#3">
+                         <TabItem Header="ChartName#3">
                             <TabControl>
                                 <TabItem Header="Chart"></TabItem>
                                 <TabItem Header="Data"></TabItem>
                             </TabControl>
                         </TabItem>
-                         <TabItem Header="Chart#4">
+                        <TabItem Header="ChartName#4">
                             <TabControl>
                                 <TabItem Header="Chart"></TabItem>
                                 <TabItem Header="Data"></TabItem>
@@ -83,7 +83,7 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <StackPanel>
-                        <TextBox />
+                        <TextBlock Height="20" />
                         <Controls:MetroProgressBar Value="100" Height="10"></Controls:MetroProgressBar>
 
                     </StackPanel>
