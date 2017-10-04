@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:LabXTemplate"
-        xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Class="LabXTemplate.MainWindow"
+        xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        x:Class="LabXTemplate.MainWindow"
+        xmlns:pt="clr-namespace:PropertyTools.Wpf;assembly=PropertyTools.Wpf"
         mc:Ignorable="d"
     ResizeMode="CanResizeWithGrip"
     Icon="../world-wide-internet-signal.ico"
@@ -14,9 +18,6 @@
     
         Title="Podstawy transmisji danych 2017 Lab X" Height="400" Width="625" ShowMaxRestoreButton="True" IsManipulationEnabled="True" TitleCharacterCasing="Normal"
                       ShowIconOnTitleBar="True" WindowState="Maximized" >
-    <Window.DataContext>
-        <local:MainWindowViewModel />
-    </Window.DataContext>
     <TabControl>
         <TabItem Header="Home">
 
@@ -33,15 +34,27 @@
 
                     <ScrollViewer Grid.Column="0"  Grid.Row="0" Background="#FF393939">
                         <StackPanel Background="#FF1E1E1E">
-                            <Button Content="Start" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover"/>
+                            <Button Content="Start" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover" Click="Button_Click"/>
                         </StackPanel>
                     </ScrollViewer>
 
                     <TabControl Grid.Column="1" Grid.ColumnSpan="1">
                         <TabItem Header="Chart#1">
                             <TabControl>
-                                <TabItem Header="Chart"></TabItem>
-                                <TabItem Header="Data"></TabItem>
+                                <TabItem Header="Chart">
+                                    <oxy:Plot LegendBackground="Chartreuse" PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526">
+                                        <oxy:Plot.Axes>
+                                            <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
+                                            <oxy:LinearAxis Title="Y" Position="Left"/>
+                                        </oxy:Plot.Axes>
+                                        <oxy:Plot.Series>
+                                            <oxy:LineSeries ItemsSource="{Binding Data}" Color="White"/>
+                                        </oxy:Plot.Series>
+                                    </oxy:Plot>
+                                </TabItem>
+                                <TabItem Header="Data">
+                                    <pt:DataGrid Margin="0 8 0 0" ItemsSource="{Binding Data}" CanInsert="False" CanDelete="False"/>
+                                </TabItem>
                             </TabControl>
                         </TabItem>
                          <TabItem Header="Chart#2">
@@ -75,6 +88,7 @@
 
                     </StackPanel>
                 </Grid>
+                <Label Content="© Oskar Cieślikiewicz 2017" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="508,-42,0,0" HorizontalContentAlignment="Right" Opacity="0.2"/>
             </Grid>
         </TabItem>
 
