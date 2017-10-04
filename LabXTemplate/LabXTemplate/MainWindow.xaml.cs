@@ -25,5 +25,10 @@ namespace LabXTemplate
         {
             InitializeComponent();
         }
+
+
+
+
+
     }
 }

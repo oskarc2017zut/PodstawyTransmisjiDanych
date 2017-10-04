@@ -10,9 +10,13 @@
     ResizeMode="CanResizeWithGrip"
     Icon="../world-wide-internet-signal.ico"
     
+    
+    
         Title="Podstawy transmisji danych 2017 Lab X" Height="400" Width="625" ShowMaxRestoreButton="True" IsManipulationEnabled="True" TitleCharacterCasing="Normal"
                       ShowIconOnTitleBar="True" WindowState="Maximized" >
-    
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
     <TabControl>
         <TabItem Header="Home">
 
