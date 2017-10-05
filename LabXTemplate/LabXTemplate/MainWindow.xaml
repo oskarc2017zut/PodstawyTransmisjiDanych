@@ -34,7 +34,8 @@
 
                     <ScrollViewer Grid.Column="0"  Grid.Row="0" Background="#FF393939">
                         <StackPanel Background="#FF1E1E1E">
-                            <Button Content="Start" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover" Click="Button_Click"/>
+                            <Button Content="Clear" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover" Click="Button_Click"/>
+
                         </StackPanel>
                     </ScrollViewer>
 
@@ -42,7 +43,7 @@
                         <TabItem Header="ChartName#1">
                             <TabControl>
                                 <TabItem Header="Chart">
-                                    <oxy:Plot LegendBackground="Chartreuse" PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
+                                    <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
                                         <oxy:Plot.Axes>
                                             <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
                                             <oxy:LinearAxis Title="Y" Position="Left"/>

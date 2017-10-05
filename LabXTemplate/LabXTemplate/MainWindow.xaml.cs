@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using MahApps.Metro.Controls;
 using OxyPlot;
+using System.Diagnostics;
 
 namespace LabXTemplate
 {
@@ -41,6 +42,7 @@ namespace LabXTemplate
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            OnPropertyChanged("CpuUsageProgressBarValue");
             Data.Add(new DataPoint(time++, rnd.NextDouble() * 10));
         }
 
@@ -49,7 +51,7 @@ namespace LabXTemplate
             InitializeComponent();
             timer.Interval = TimeSpan.FromMilliseconds(10);
             timer.Tick += Timer_Tick;
-            //timer.Start();
+            timer.Start();
         }
 
         public ObservableCollection<DataPoint> Data
@@ -64,7 +66,7 @@ namespace LabXTemplate
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Data.Add(new DataPoint(time++, rnd.NextDouble() * 10));
+            Data.Clear();
         }
     }
 }
