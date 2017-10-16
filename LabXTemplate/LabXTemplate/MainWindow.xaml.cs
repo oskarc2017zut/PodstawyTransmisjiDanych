@@ -80,3 +80,49 @@ namespace LabXTemplate
         }
     }
 }
+
+/*
+ * public float GetValue(float time)
+			#else
+			private float GetValue(float time)
+			#endif
+		{
+			float value = 0f;
+			float t = frequency * time + phase;
+			switch (signalType)
+			{ // http://en.wikipedia.org/wiki/Waveform
+				case SignalType.Sine: // sin( 2 * pi * t )
+					value = (float)Math.Sin(2f*Math.PI*t);
+					break;
+				case SignalType.Square: // sign( sin( 2 * pi * t ) )
+					value = Math.Sign(Math.Sin(2f*Math.PI*t));
+					break;
+				case SignalType.Triangle: // 2 * abs( t - 2 * floor( t / 2 ) - 1 ) - 1
+					value = 1f-4f*(float)Math.Abs( Math.Round(t-0.25f)-(t-0.25f) );
+					break;
+				case SignalType.Sawtooth: // 2 * ( t/a - floor( t/a + 1/2 ) )
+					value = 2f*(t-(float)Math.Floor(t+0.5f));
+					break;
+					
+
+				case SignalType.Pulse: // http://en.wikipedia.org/wiki/Pulse_wave
+					value = (Math.Abs(Math.Sin(2*Math.PI*t)) < 1.0 - 10E-3) ? (0) : (1);
+					break;
+				case SignalType.WhiteNoise: // http://en.wikipedia.org/wiki/White_noise
+					value = 2f *(float)random.Next(int.MaxValue) / int.MaxValue - 1f;
+					break;
+				case SignalType.GaussNoise: // http://en.wikipedia.org/wiki/Gaussian_noise
+					value = (float)StatisticFunction.NORMINV((float)random.Next(int.MaxValue) / int.MaxValue, 0.0, 0.4);
+					break;
+				case SignalType.DigitalNoise: //Binary Bit Generators
+					value = random.Next(2);
+					break;
+					
+				case SignalType.UserDefined:
+					value = (getValueCallback==null) ? (0f): getValueCallback(t);
+					break;
+			}
+
+			return(invert*amplitude*value+offset);
+		}
+ */
