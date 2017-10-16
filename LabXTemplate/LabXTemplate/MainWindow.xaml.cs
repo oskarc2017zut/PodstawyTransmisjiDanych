@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,15 @@ namespace LabXTemplate
     /// </summary>
     public partial class MainWindow : MetroWindow, INotifyPropertyChanged
     {
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            //timer.Start();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -35,21 +44,17 @@ namespace LabXTemplate
             }
         }
 
-        DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer timer = null;
         Random rnd = new Random();
-        double time = 0d;
+        Stopwatch stopwatch = new Stopwatch();
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Data.Add(new DataPoint(time++, rnd.NextDouble() * 10));
-        }
-
-        public MainWindow()
-        {
-            InitializeComponent();
-            timer.Interval = TimeSpan.FromMilliseconds(10);
-            timer.Tick += Timer_Tick;
-            //timer.Start();
+            double time = ((double)stopwatch.ElapsedMilliseconds)/ 1000;
+            double frequency = 1;
+            double phase = 0;
+            double t = frequency * time + phase;
+            Data.Add(new DataPoint(time, 2f * (t - (float)Math.Floor(t + 0.5f))));
         }
 
         public ObservableCollection<DataPoint> Data
@@ -57,14 +62,21 @@ namespace LabXTemplate
             get { return (ObservableCollection<DataPoint>)GetValue(DataProperty); }
             set { SetValue(DataProperty, value); }
         }
-
-        // Using a DependencyProperty as the backing store for Data.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DataProperty =
             DependencyProperty.Register("Data", typeof(ObservableCollection<DataPoint>), typeof(MainWindow), new PropertyMetadata(new ObservableCollection<DataPoint>()));
 
+        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Data.Add(new DataPoint(time++, rnd.NextDouble() * 10));
+            if (timer == null)
+            {
+                timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromMilliseconds(10);
+                timer.Tick += Timer_Tick;
+                stopwatch.Start();
+                timer.Start();
+            }
         }
     }
 }
