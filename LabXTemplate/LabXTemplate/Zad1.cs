@@ -10,15 +10,24 @@ namespace LabXTemplate
 {
     partial class Zadania
     {
+        
         public void zad1()
         {
-            List<DataPoint> Data = new List<DataPoint>();
+            List<DataPoint> data = new List<DataPoint>();
+
+            const double A = 0.92;
+            const double f = 1900;
+            const double fn = 8000;
+            const double fi = Math.PI / 3;
             
-            Data.Add(new DataPoint(1,1));
-            Data.Add(new DataPoint(1,2));
-            Data.Add(new DataPoint(1,3));
+            const double duration = 1;//in seconds
             
-            ChartsData.Add(Data);
+            for (double x = 0; x < duration; x += 1/fn)
+            {
+               double y = A * Math.Sin(2 * Math.PI * f * x + fi);
+               data.Add(new DataPoint(x, y));
+            }
+            ChartsData.Add(data);
         }
     }
 }

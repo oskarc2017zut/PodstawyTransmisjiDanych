@@ -18,10 +18,8 @@ namespace LabXTemplate
             zad2();
             zad3();
             zad4();
-            zad5();
-            zad6();
-            zad7();
-            zad8();
         }
+
+        
     }
 }

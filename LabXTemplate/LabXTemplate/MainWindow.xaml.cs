@@ -33,37 +33,31 @@ namespace LabXTemplate
         {
             InitializeComponent();
             var zadania = new Zadania();
-            ChartsControl = _generateCharts(zadania);
+
+            xamlZad1Chart.ItemsSource = zadania.ChartsData[0];
+            xamlZad1Data.ItemsSource = zadania.ChartsData[0];
+
+
+            xamlZad2AChart.ItemsSource = zadania.ChartsData[1];
+            xamlZad2AData.ItemsSource = zadania.ChartsData[1];
+
+            xamlZad2BChart.ItemsSource = zadania.ChartsData[2];
+            xamlZad2BData.ItemsSource = zadania.ChartsData[2];
+
+
+            xamlZad3Chart.ItemsSource = zadania.ChartsData[3];
+            xamlZad3Data.ItemsSource = zadania.ChartsData[3];
+
+
+            xamlZad4AChart.ItemsSource = zadania.ChartsData[4];
+            xamlZad4AData.ItemsSource = zadania.ChartsData[4];
+
+            xamlZad4BChart.ItemsSource = zadania.ChartsData[5];
+            xamlZad4BData.ItemsSource = zadania.ChartsData[5];
+
+            xamlZad4CChart.ItemsSource = zadania.ChartsData[6];
+            xamlZad4CData.ItemsSource = zadania.ChartsData[6];
         }
-
-        private TabControl _generateCharts(Zadania zadania)
-        {
-            TabControl control = new TabControl();
-            List<TabItem> controlItems = new List<TabItem>();
-            foreach (var chartdata in zadania.ChartsData)
-            {
-                var item = new TabItem();
-                var subControl = new TabControl();
-                var subControlItems = new List<TabItem>();
-
-                var itemChart = new TabItem();
-                var chart = new PlotModel();
-                var linearSeries = new OxyPlot.Series.LineSeries();
-                linearSeries.ItemsSource = chartdata;
-                chart.Series.Add(linearSeries);
-
-
-
-                subControl.ItemsSource = subControlItems;
-                item.Content = subControl;
-                controlItems.Add(item);
-            }
-            control.ItemsSource = controlItems;
-
-            return control;
-        }
-
-        
     }
 }
 
