@@ -33,13 +33,10 @@
                     </Grid.ColumnDefinitions>
 
                     <ScrollViewer Grid.Column="0"  Grid.Row="0" Background="#FF393939">
-                        <StackPanel Background="#FF1E1E1E">
-                            <Button Content="Clear" Margin="5" BorderBrush="{x:Null}" Controls:ControlsHelper.ContentCharacterCasing="Normal" ClickMode="Hover" Click="Button_Click"/>
-
-                        </StackPanel>
+                        <StackPanel Background="#FF1E1E1E"/>
                     </ScrollViewer>
-
-                    <TabControl Grid.Column="1" Grid.ColumnSpan="1">
+                    
+                    <TabControl x:Name="ChartsControl" Grid.Column="1" Grid.ColumnSpan="1">
                         <TabItem Header="ChartName#1">
                             <TabControl>
                                 <TabItem Header="Chart">
