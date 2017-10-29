@@ -25,9 +25,9 @@ namespace LabXTemplate
                 {
                     double tmp = 0;
 
-                    for (int p = 0; p < H; p++)
+                    for (double p = 0; p < H; p++)
                     {
-                        tmp += (double)1 / ((double)2 * (double)p + (double)1) * (double)Math.Sin((((double)2 * (double)p + (double)1) * (double)Math.PI * (double)t) / (double)((double)0.1 * (double)fn));
+                        tmp += 1 / (2 * p + 1) * Math.Sin(((2 * p + 1) * Math.PI * t) / (0.1 * fn));
                     }
 
                     
@@ -37,7 +37,7 @@ namespace LabXTemplate
 
                 dataA.Add(new DataPoint(t, g(1)));
                 dataB.Add(new DataPoint(t, g(10)));
-                dataC.Add(new DataPoint(t, g(120)));
+                dataC.Add(new DataPoint(t, g(1000)));
             }
 
             ChartsData.Add(dataA);
