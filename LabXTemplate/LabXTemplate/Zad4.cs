@@ -37,7 +37,7 @@ namespace LabXTemplate
 
                 dataA.Add(new DataPoint(t, g(1)));
                 dataB.Add(new DataPoint(t, g(10)));
-                dataC.Add(new DataPoint(t, g(1000)));
+                dataC.Add(new DataPoint(t, g(120)));
             }
 
             ChartsData.Add(dataA);
