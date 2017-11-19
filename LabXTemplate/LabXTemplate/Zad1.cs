@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using OxyPlot;
+using System.Linq;
 
 namespace LabXTemplate
 {
@@ -27,6 +28,9 @@ namespace LabXTemplate
                double y = A * Math.Sin(2 * Math.PI * f * x + fi);
                data.Add(new DataPoint(x, y));
             }
+
+
+            
             ChartsData.Add(data);
         }
     }
