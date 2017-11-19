@@ -34,8 +34,8 @@ namespace LabXTemplate
                 dataB.Add(new DataPoint(n, v));
             }
 
-            ChartsData.Add(dataA);
-            ChartsData.Add(dataB);
+            ChartsData.Add(plotdft(dataA));
+            ChartsData.Add(plotdft(dataB));
         }
     }
 }

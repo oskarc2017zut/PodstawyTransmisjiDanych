@@ -13,9 +13,9 @@ namespace LabXTemplate
         /* 
 	 * Computes the discrete Fourier transform (DFT) of the given complex vector.
 	 */
-        public static Complex[] computeDft(Complex[] input)
+        public static Complex[] computeDft(double[] input)
         {
-            int n = input.Length;
+            int n = input.Length/2;
             Complex[] output = new Complex[n];
             for (int k = 0; k < n; k++)
             {  // For each output element
@@ -30,27 +30,25 @@ namespace LabXTemplate
             return output;
         }
 
+        
 
-        /* 
-         * Computes the discrete Fourier transform (DFT) of the given complex vector.
-         * All the array arguments must be non-null and have the same length.
-         */
-        public static void computeDft(double[] inreal, double[] inimag, double[] outreal, double[] outimag)
+
+        public List<DataPoint> plotdft(List<DataPoint> data)
         {
-            int n = inreal.Length;
-            for (int k = 0; k < n; k++)
-            {  // For each output element
-                double sumreal = 0;
-                double sumimag = 0;
-                for (int t = 0; t < n; t++)
-                {  // For each input element
-                    double angle = 2 * Math.PI * t * k / n;
-                    sumreal += inreal[t] * Math.Cos(angle) + inimag[t] * Math.Sin(angle);
-                    sumimag += -inreal[t] * Math.Sin(angle) + inimag[t] * Math.Cos(angle);
-                }
-                outreal[k] = sumreal;
-                outimag[k] = sumimag;
+            var dft = computeDft((from DataPoint dp in data select dp.Y).ToArray());
+            data.Clear();
+
+            for (int i = 0; i < dft.Length; i++)
+            {
+                data.Add(new DataPoint((double)i*100/dft.Length, dft[i].Magnitude));
             }
+
+            //foreach (var comp in dft)
+            //{
+            //    data.Add(new DataPoint(comp.Real, comp.Imaginary));
+            //}
+
+            return data;
         }
     }
 }

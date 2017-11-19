@@ -36,7 +36,7 @@ namespace LabXTemplate
                 data.Add(new DataPoint(t, u));
             }
 
-            ChartsData.Add(data);
+            ChartsData.Add(plotdft(data));
         }
     }
 }

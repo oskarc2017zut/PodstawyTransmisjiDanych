@@ -40,9 +40,9 @@ namespace LabXTemplate
                 dataC.Add(new DataPoint(t, g(120)));
             }
 
-            ChartsData.Add(dataA);
-            ChartsData.Add(dataB);
-            ChartsData.Add(dataC);
+            ChartsData.Add(plotdft(dataA));
+            ChartsData.Add(plotdft(dataB));
+            ChartsData.Add(plotdft(dataC));
         }
     }
 }
