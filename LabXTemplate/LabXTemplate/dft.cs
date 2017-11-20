@@ -10,18 +10,15 @@ namespace LabXTemplate
 {
     partial class Zadania
     {
-        /* 
-	 * Computes the discrete Fourier transform (DFT) of the given complex vector.
-	 */
         public static Complex[] computeDft(double[] input)
         {
-            int n = input.Length/2;
+            int n = input.Length / 2;
             Complex[] output = new Complex[n];
             for (int k = 0; k < n; k++)
-            {  // For each output element
+            {
                 Complex sum = 0;
                 for (int t = 0; t < n; t++)
-                {  // For each input element
+                {
                     double angle = 2 * Math.PI * t * k / n;
                     sum += input[t] * Complex.Exp(new Complex(0, -angle));
                 }
@@ -29,8 +26,6 @@ namespace LabXTemplate
             }
             return output;
         }
-
-        
 
 
         public List<DataPoint> plotdft(List<DataPoint> data)
@@ -40,13 +35,8 @@ namespace LabXTemplate
 
             for (int i = 0; i < dft.Length; i++)
             {
-                data.Add(new DataPoint((double)i*100/dft.Length, dft[i].Magnitude));
+                data.Add(new DataPoint((double) i * 100 / dft.Length, dft[i].Magnitude));
             }
-
-            //foreach (var comp in dft)
-            //{
-            //    data.Add(new DataPoint(comp.Real, comp.Imaginary));
-            //}
 
             return data;
         }

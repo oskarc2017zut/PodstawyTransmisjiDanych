@@ -171,6 +171,26 @@
                                 </TabItem>
                             </TabControl>
                         </TabItem>
+                        
+                        <TabItem Header="fft">
+                            <TabControl>
+                                <TabItem Header="Chart">
+                                    <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
+                                        <oxy:Plot.Axes>
+                                            <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
+                                            <oxy:LinearAxis Title="Y" Position="Left"/>
+                                        </oxy:Plot.Axes>
+                                        <oxy:Plot.Series>
+                                            <oxy:LineSeries Name="xamlfftChart" Color="White"/>
+                                        </oxy:Plot.Series>
+                                    </oxy:Plot>
+                                </TabItem>
+                                <TabItem Header="Data">
+                                    <DataGrid Name="xamlfftData" Margin="0 8 0 0"/>
+                                </TabItem>
+                            </TabControl>
+                        </TabItem>
+                        
                     </TabControl>
 
 

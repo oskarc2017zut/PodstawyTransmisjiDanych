@@ -57,6 +57,9 @@ namespace LabXTemplate
 
             xamlZad4CChart.ItemsSource = zadania.ChartsData[6];
             xamlZad4CData.ItemsSource = zadania.ChartsData[6];
+
+            xamlfftChart.ItemsSource = zadania.ChartsData[7];
+            xamlfftData.ItemsSource = zadania.ChartsData[7];
         }
     }
 }

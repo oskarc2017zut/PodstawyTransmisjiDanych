@@ -18,6 +18,7 @@ namespace LabXTemplate
             zad2();
             zad3();
             zad4();
+            lab2zad3();
         }
 
         
