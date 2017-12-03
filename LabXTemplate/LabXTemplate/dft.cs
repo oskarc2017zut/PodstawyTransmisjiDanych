@@ -12,7 +12,7 @@ namespace LabXTemplate
     {
         public static Complex[] computeDft(double[] input)
         {
-            int n = input.Length / 2;
+            int n = input.Length;
             Complex[] output = new Complex[n];
             for (int k = 0; k < n; k++)
             {

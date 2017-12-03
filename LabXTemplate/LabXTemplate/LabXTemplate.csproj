@@ -87,6 +87,7 @@
     </ApplicationDefinition>
     <Compile Include="dft.cs" />
     <Compile Include="fft.cs" />
+    <Compile Include="modulation.cs" />
     <Compile Include="Zad1.cs" />
     <Compile Include="Zad2.cs" />
     <Compile Include="Zad3.cs" />
