@@ -12,27 +12,75 @@ namespace LabXTemplate
 {
     partial class Zadania
     {
+        enum Z
+        {
+            a,
+            p
+        }
 
         public void zad1()
         {
-            List<DataPoint> data = new List<DataPoint>();
-
-
-            const double A = 0.92;
-            const double f = 1900;
+            const double A = 1;
+            const double fm = 4000;
             const double fn = 8000;
-            const double fi = Math.PI / 3;
 
+            double ka;
+            double kp;
+
+            const double fs = 2000;
             const double duration = 1; //in seconds
 
-            for (double x = 0; x < duration; x += 1 / fn)
+            List<DataPoint> modulating(Z z)
             {
-                double y = A * Math.Sin(2 * Math.PI * f * x + fi);
-                data.Add(new DataPoint(x, y));
+                List<DataPoint> data = new List<DataPoint>();
+
+                var mod = new Modulation(A, fm, fn, ka, kp);
+                Func<double, double> func;
+                switch (z)
+                {
+                    case Z.a:
+                        func = mod.Za;
+                        break;
+                    case Z.p:
+                        func = mod.Zp;
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+
+
+
+                for (double x = 0; x < duration; x += 1 / fs)
+                {
+                    double y = func(x);
+                    data.Add(new DataPoint(x, y));
+                }
+
+
+                return data;
             }
-            
-            
-            ChartsData.Add(plotdft(data));
+
+            void k(double a, double p)
+            {
+                ka = a; kp = p;
+
+                void computeMods(Z z)
+                {
+                var mod = modulating(z);
+                //var modFFT = computeFFT(mod.Select(d => new DataPoint(d.X, d.Y)).ToList());
+               // var modDB = modFFT.Select(d => new DataPoint(d.X, d.Y)).ToList();
+
+                ChartsData.Add(mod);
+               // ChartsData.Add(modFFT);
+                //ChartsData.Add(modDB);
+                }
+
+                computeMods(Z.a);
+                //computeMods(Z.p);
+            }
+
+            k(80, 45);
         }
+
     }
 }

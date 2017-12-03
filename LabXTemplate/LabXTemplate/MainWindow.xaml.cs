@@ -34,32 +34,30 @@ namespace LabXTemplate
             InitializeComponent();
             var zadania = new Zadania();
 
-            xamlZad1Chart.ItemsSource = zadania.ChartsData[0];
-            xamlZad1Data.ItemsSource = zadania.ChartsData[0];
+            a1.ItemsSource = zadania.ChartsData[0];
+           // a2.ItemsSource = zadania.ChartsData[1];
+           // a3.ItemsSource = zadania.ChartsData[2];
+           // a4.ItemsSource = zadania.ChartsData[3];
+           // a5.ItemsSource = zadania.ChartsData[4];
+           // a6.ItemsSource = zadania.ChartsData[5];
 
+/*
+            var x = zadania.ChartsData.Count;
 
-            xamlZad2AChart.ItemsSource = zadania.ChartsData[1];
-            xamlZad2AData.ItemsSource = zadania.ChartsData[1];
+            List<TabItem> items = new List<TabItem>();
+            foreach (var dp in zadania.ChartsData)
+            {
+                TabItem item = new TabItem();
+                item.Header = "1";
 
-            xamlZad2BChart.ItemsSource = zadania.ChartsData[2];
-            xamlZad2BData.ItemsSource = zadania.ChartsData[2];
+                PlotModel plot = new PlotModel();
+                LineSe
 
-
-            xamlZad3Chart.ItemsSource = zadania.ChartsData[3];
-            xamlZad3Data.ItemsSource = zadania.ChartsData[3];
-
-
-            xamlZad4AChart.ItemsSource = zadania.ChartsData[4];
-            xamlZad4AData.ItemsSource = zadania.ChartsData[4];
-
-            xamlZad4BChart.ItemsSource = zadania.ChartsData[5];
-            xamlZad4BData.ItemsSource = zadania.ChartsData[5];
-
-            xamlZad4CChart.ItemsSource = zadania.ChartsData[6];
-            xamlZad4CData.ItemsSource = zadania.ChartsData[6];
-
-            xamlfftChart.ItemsSource = zadania.ChartsData[7];
-            xamlfftData.ItemsSource = zadania.ChartsData[7];
+                item.Content = "";
+                ChartsControl.Items.Add(item);
+            }
+            */
+            
         }
     }
 }
