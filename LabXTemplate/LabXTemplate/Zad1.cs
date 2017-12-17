@@ -12,26 +12,27 @@ namespace LabXTemplate
 {
     partial class Zadania
     {
-
         public void zad1()
         {
             List<DataPoint> data = new List<DataPoint>();
 
+            int value = 1532;
+            string binary = Convert.ToString(value, 2);
 
-            const double A = 0.92;
-            const double f = 1900;
-            const double fn = 8000;
-            const double fi = Math.PI / 3;
-
-            const double duration = 1; //in seconds
-
-            for (double x = 0; x < duration; x += 1 / fn)
+            bool[] m = new bool[binary.Length];
+            for (int i = 0; i < binary.Length; i++)
             {
-                double y = A * Math.Sin(2 * Math.PI * f * x + fi);
-                data.Add(new DataPoint(x, y));
+                switch (binary[i])
+                {
+                    case '0':
+                        m[i] = false;
+                        break;
+                    case '1':
+                        m[i] = true;
+                        break;
+                }
             }
-            
-            
+
             ChartsData.Add(plotdft(data));
         }
     }

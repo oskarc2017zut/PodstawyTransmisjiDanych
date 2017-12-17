@@ -15,10 +15,10 @@ namespace LabXTemplate
         public Zadania()
         {
             zad1();
-            zad2();
-            zad3();
-            zad4();
-            lab2zad3();
+            //zad2();
+            //zad3();
+            //zad4();
+            //lab2zad3();
         }
 
         
