@@ -38,25 +38,84 @@
                     <TabControl x:Name="ChartsControl" Grid.Column="1" Grid.ColumnSpan="1">
                         <TabItem Header="Zad1">
                             <TabControl>
-                                <TabItem Header="Chart">
-                                    <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
-                                        <oxy:Plot.Axes>
-                                            <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
-                                            <oxy:LinearAxis Title="Y" Position="Left"/>
-                                        </oxy:Plot.Axes>
-                                        <oxy:Plot.Series>
-                                            <oxy:LineSeries Name="xamlZad1Chart" Color="White"/>
-                                        </oxy:Plot.Series>
-                                    </oxy:Plot>
+                                <TabItem Header="Binary">
+                                    <TabControl>
+                                        <TabItem Header="Chart">
+                                            <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
+                                                <oxy:Plot.Axes>
+                                                    <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
+                                                    <oxy:LinearAxis Title="Y" Position="Left"/>
+                                                </oxy:Plot.Axes>
+                                                <oxy:Plot.Series>
+                                                    <oxy:LineSeries Name="z1c" Color="White"/>
+                                                </oxy:Plot.Series>
+                                            </oxy:Plot>
+                                        </TabItem>
+                                        <TabItem Header="Data">
+                                            <DataGrid Name="z1d" Margin="0 8 0 0"/>
+                                        </TabItem>
+                                    </TabControl>
                                 </TabItem>
-                                <TabItem Header="Data">
-                                    <DataGrid Name="xamlZad1Data" Margin="0 8 0 0"/>
+                                <TabItem Header="Za">
+                                    <TabControl>
+                                        <TabItem Header="Chart">
+                                            <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
+                                                <oxy:Plot.Axes>
+                                                    <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
+                                                    <oxy:LinearAxis Title="Y" Position="Left"/>
+                                                </oxy:Plot.Axes>
+                                                <oxy:Plot.Series>
+                                                    <oxy:LineSeries Name="z2c" Color="White"/>
+                                                </oxy:Plot.Series>
+                                            </oxy:Plot>
+                                        </TabItem>
+                                        <TabItem Header="Data">
+                                            <DataGrid Name="z2d" Margin="0 8 0 0"/>
+                                        </TabItem>
+                                    </TabControl>
                                 </TabItem>
+                                <TabItem Header="Zf">
+                                    <TabControl>
+                                        <TabItem Header="Chart">
+                                            <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
+                                                <oxy:Plot.Axes>
+                                                    <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
+                                                    <oxy:LinearAxis Title="Y" Position="Left"/>
+                                                </oxy:Plot.Axes>
+                                                <oxy:Plot.Series>
+                                                    <oxy:LineSeries Name="z3c" Color="White"/>
+                                                </oxy:Plot.Series>
+                                            </oxy:Plot>
+                                        </TabItem>
+                                        <TabItem Header="Data">
+                                            <DataGrid Name="z3d" Margin="0 8 0 0"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </TabItem>
+                                <TabItem Header="Zp">
+                                    <TabControl>
+                                        <TabItem Header="Chart">
+                                            <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
+                                                <oxy:Plot.Axes>
+                                                    <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
+                                                    <oxy:LinearAxis Title="Y" Position="Left"/>
+                                                </oxy:Plot.Axes>
+                                                <oxy:Plot.Series>
+                                                    <oxy:LineSeries Name="z4c" Color="White"/>
+                                                </oxy:Plot.Series>
+                                            </oxy:Plot>
+                                        </TabItem>
+                                        <TabItem Header="Data">
+                                            <DataGrid Name="z4d" Margin="0 8 0 0"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </TabItem>
+
                             </TabControl>
                         </TabItem>
                         <TabItem Header="Zad2">
                             <TabControl>
-                                <TabItem Header="A">
+                                <TabItem Header="Za">
                                     <TabControl>
                                         <TabItem Header="Chart">
                                             <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
@@ -65,16 +124,16 @@
                                                     <oxy:LinearAxis Title="Y" Position="Left"/>
                                                 </oxy:Plot.Axes>
                                                 <oxy:Plot.Series>
-                                                    <oxy:LineSeries Name="xamlZad2AChart" Color="White"/>
+                                                    <oxy:LineSeries Name="z5c" Color="White"/>
                                                 </oxy:Plot.Series>
                                             </oxy:Plot>
                                         </TabItem>
                                         <TabItem Header="Data">
-                                            <DataGrid Name="xamlZad2AData" Margin="0 8 0 0"/>
+                                            <DataGrid Name="z5d" Margin="0 8 0 0"/>
                                         </TabItem>
                                     </TabControl>
                                 </TabItem>
-                                <TabItem Header="B">
+                                <TabItem Header="Zf">
                                     <TabControl>
                                         <TabItem Header="Chart">
                                             <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
@@ -83,16 +142,33 @@
                                                     <oxy:LinearAxis Title="Y" Position="Left"/>
                                                 </oxy:Plot.Axes>
                                                 <oxy:Plot.Series>
-                                                    <oxy:LineSeries Name="xamlZad2BChart" Color="White"/>
+                                                    <oxy:LineSeries Name="z6c" Color="White"/>
                                                 </oxy:Plot.Series>
                                             </oxy:Plot>
                                         </TabItem>
                                         <TabItem Header="Data">
-                                            <DataGrid Name="xamlZad2BData" Margin="0 8 0 0"/>
+                                            <DataGrid Name="z6d" Margin="0 8 0 0"/>
                                         </TabItem>
                                     </TabControl>
                                 </TabItem>
-                                
+                                <TabItem Header="Zp">
+                                    <TabControl>
+                                        <TabItem Header="Chart">
+                                            <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC" Background="#FF252525" SelectionColor="#FF252526" Foreground="Black">
+                                                <oxy:Plot.Axes>
+                                                    <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom"/>
+                                                    <oxy:LinearAxis Title="Y" Position="Left"/>
+                                                </oxy:Plot.Axes>
+                                                <oxy:Plot.Series>
+                                                    <oxy:LineSeries Name="z7c" Color="White"/>
+                                                </oxy:Plot.Series>
+                                            </oxy:Plot>
+                                        </TabItem>
+                                        <TabItem Header="Data">
+                                            <DataGrid Name="z7d" Margin="0 8 0 0"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </TabItem>
                             </TabControl>
                         </TabItem>
                          <TabItem Header="Zad3">

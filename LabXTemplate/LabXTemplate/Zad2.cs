@@ -12,30 +12,21 @@ namespace LabXTemplate
     {
         public void zad2()
         {
-            const double A = 0.92;
-            const double f = 1900;
-            const double fn = 8000;
-            const double fi = Math.PI / 3;
+            var ZaFFT = computeFFT(dataZa.Select(d => new DataPoint(d.X, d.Y)).ToList());
+            var ZfFFT = computeFFT(dataZf.Select(d => new DataPoint(d.X, d.Y)).ToList());
+            var ZpFFT = computeFFT(dataZp.Select(d => new DataPoint(d.X, d.Y)).ToList());
 
-            const double duration = 1;//in seconds
-            
-
-            List<DataPoint> dataA = new List<DataPoint>();
-            List<DataPoint> dataB = new List<DataPoint>();
-            for (double n = 0; n < duration; n += 1 / fn)
+            int x = ZaFFT.Count;
+            for (int i = (x-1); i >= (x)/2; i--)
             {
-                double x = A * Math.Sin(2 * Math.PI * f * n + fi);
-                double y = Math.Exp(-n / 2);
-
-                double z = x + 0.35 * y;
-                dataA.Add(new DataPoint(n, z));
-
-                double v = x * y;
-                dataB.Add(new DataPoint(n, v));
+               ZaFFT.RemoveAt(i);
+               ZfFFT.RemoveAt(i);
+               ZpFFT.RemoveAt(i);
             }
 
-            ChartsData.Add(plotdft(dataA));
-            ChartsData.Add(plotdft(dataB));
+            ChartsData.Add(ZaFFT);
+            ChartsData.Add(ZfFFT);
+            ChartsData.Add(ZpFFT);
         }
     }
 }

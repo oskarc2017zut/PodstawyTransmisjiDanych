@@ -34,32 +34,26 @@ namespace LabXTemplate
             InitializeComponent();
             var zadania = new Zadania();
 
-            //xamlZad1Chart.ItemsSource = zadania.ChartsData[0];
-            //xamlZad1Data.ItemsSource = zadania.ChartsData[0];
+            z1c.ItemsSource = zadania.ChartsData[0];
+            z1d.ItemsSource = zadania.ChartsData[0];
 
+            z2c.ItemsSource = zadania.ChartsData[1];
+            z2d.ItemsSource = zadania.ChartsData[1];
 
-            //xamlZad2AChart.ItemsSource = zadania.ChartsData[1];
-            //xamlZad2AData.ItemsSource = zadania.ChartsData[1];
+            z3c.ItemsSource = zadania.ChartsData[2];
+            z3d.ItemsSource = zadania.ChartsData[2];
 
-            //xamlZad2BChart.ItemsSource = zadania.ChartsData[2];
-            //xamlZad2BData.ItemsSource = zadania.ChartsData[2];
+            z4c.ItemsSource = zadania.ChartsData[3];
+            z4d.ItemsSource = zadania.ChartsData[3];
 
+            z5c.ItemsSource = zadania.ChartsData[4];
+            z5d.ItemsSource = zadania.ChartsData[4];
 
-            //xamlZad3Chart.ItemsSource = zadania.ChartsData[3];
-            //xamlZad3Data.ItemsSource = zadania.ChartsData[3];
+            z6c.ItemsSource = zadania.ChartsData[5];
+            z6d.ItemsSource = zadania.ChartsData[5];
 
-
-            //xamlZad4AChart.ItemsSource = zadania.ChartsData[4];
-            //xamlZad4AData.ItemsSource = zadania.ChartsData[4];
-
-            //xamlZad4BChart.ItemsSource = zadania.ChartsData[5];
-            //xamlZad4BData.ItemsSource = zadania.ChartsData[5];
-
-            //xamlZad4CChart.ItemsSource = zadania.ChartsData[6];
-            //xamlZad4CData.ItemsSource = zadania.ChartsData[6];
-
-            //xamlfftChart.ItemsSource = zadania.ChartsData[7];
-            //xamlfftData.ItemsSource = zadania.ChartsData[7];
+            z7c.ItemsSource = zadania.ChartsData[6];
+            z7d.ItemsSource = zadania.ChartsData[6];
         }
     }
 }

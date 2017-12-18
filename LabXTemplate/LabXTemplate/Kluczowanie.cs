@@ -10,7 +10,7 @@ namespace LabXTemplate
             this._a2 = a2;
             this._fn = fn;
             this._fn1 = fn1;
-            this._fn2 = f2;
+            this._fn2 = f2*10; //*10 dla wzmocnienia efektu wizualnego
         }
 
         private readonly double _a1;
@@ -24,9 +24,9 @@ namespace LabXTemplate
             switch (m)
             {
                 case false:
-                    return _a1 * Math.Sin(2 * Math.PI * _fn * t);
+                    return _a1 * Math.Sin(2 * Math.PI * _fn * t/1000);
                 case true:
-                    return _a2 * Math.Sin(2 * Math.PI * _fn * t);
+                    return _a2 * Math.Sin(2 * Math.PI * _fn * t/1000);
             }
 
             throw new NotImplementedException();
@@ -37,9 +37,9 @@ namespace LabXTemplate
             switch (m)
             {
                 case false:
-                    return Math.Sin(2 * Math.PI * _fn1 * t);
+                    return Math.Sin(2 * Math.PI * _fn1 * (t/1000));
                 case true:
-                    return Math.Sin(2 * Math.PI * _fn2 * t);
+                    return Math.Sin(2 * Math.PI * _fn2 * (t/1000));
             }
 
             throw new NotImplementedException();
@@ -50,9 +50,9 @@ namespace LabXTemplate
             switch (m)
             {
                 case false:
-                    return Math.Sin(2 * Math.PI * _fn * t);
+                    return Math.Sin(2 * Math.PI * _fn * (t / 1000));
                 case true:
-                    return Math.Sin(2 * Math.PI * _fn * t + Math.PI);
+                    return Math.Sin(2 * Math.PI * _fn * (t / 1000) + Math.PI);
             }
 
             throw new NotImplementedException();
