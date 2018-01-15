@@ -19,14 +19,34 @@ namespace LabXTemplate
         private readonly double _fn1;
         private readonly double _fn2;
 
+        public double sa(double t)
+        {
+            return _a2* Math.Sin(2 * Math.PI * _fn * t / 1000);
+        }
+
+        public double sf1(double t)
+        {
+            return Math.Sin(2 * Math.PI * _fn1 * (t / 1000));
+        }
+
+        public double sf2(double t)
+        {
+            return Math.Sin(2 * Math.PI * _fn2 * (t / 1000));
+        }
+
+        public double sp(double t)
+        {
+            return Math.Sin(2 * Math.PI * _fn * (t / 1000));
+        }
+
         public double Za(double t, bool m)
         {
             switch (m)
             {
                 case false:
-                    return _a1 * Math.Sin(2 * Math.PI * _fn * t/1000);
+                    return sp(t);
                 case true:
-                    return _a2 * Math.Sin(2 * Math.PI * _fn * t/1000);
+                    return sa(t);
             }
 
             throw new NotImplementedException();
@@ -37,9 +57,9 @@ namespace LabXTemplate
             switch (m)
             {
                 case false:
-                    return Math.Sin(2 * Math.PI * _fn1 * (t/1000));
+                    return sf1(t);
                 case true:
-                    return Math.Sin(2 * Math.PI * _fn2 * (t/1000));
+                    return sf2(t);
             }
 
             throw new NotImplementedException();
@@ -50,7 +70,7 @@ namespace LabXTemplate
             switch (m)
             {
                 case false:
-                    return Math.Sin(2 * Math.PI * _fn * (t / 1000));
+                    return sp(t);
                 case true:
                     return Math.Sin(2 * Math.PI * _fn * (t / 1000) + Math.PI);
             }

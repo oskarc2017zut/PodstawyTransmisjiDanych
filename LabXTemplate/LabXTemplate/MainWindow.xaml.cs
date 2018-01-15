@@ -35,25 +35,19 @@ namespace LabXTemplate
             var zadania = new Zadania();
 
             z1c.ItemsSource = zadania.ChartsData[0];
-            z1d.ItemsSource = zadania.ChartsData[0];
-
             z2c.ItemsSource = zadania.ChartsData[1];
-            z2d.ItemsSource = zadania.ChartsData[1];
-
             z3c.ItemsSource = zadania.ChartsData[2];
-            z3d.ItemsSource = zadania.ChartsData[2];
-
             z4c.ItemsSource = zadania.ChartsData[3];
-            z4d.ItemsSource = zadania.ChartsData[3];
-
             z5c.ItemsSource = zadania.ChartsData[4];
-            z5d.ItemsSource = zadania.ChartsData[4];
-
             z6c.ItemsSource = zadania.ChartsData[5];
-            z6d.ItemsSource = zadania.ChartsData[5];
-
             z7c.ItemsSource = zadania.ChartsData[6];
-            z7d.ItemsSource = zadania.ChartsData[6];
+            z8c.ItemsSource = zadania.ChartsData[7];
+            z9c.ItemsSource = zadania.ChartsData[8];
+            z10c.ItemsSource = zadania.ChartsData[9];
+            z11c.ItemsSource = zadania.ChartsData[10];
+            z12c.ItemsSource = zadania.ChartsData[11];
+            z13c.ItemsSource = zadania.ChartsData[12];
+            z14c.ItemsSource = zadania.ChartsData[13];
         }
     }
 }
