@@ -48,6 +48,8 @@ namespace LabXTemplate
             z12c.ItemsSource = zadania.ChartsData[11];
             z13c.ItemsSource = zadania.ChartsData[12];
             z14c.ItemsSource = zadania.ChartsData[13];
+            z15c.ItemsSource = zadania.ChartsData[14];
+            z16c.ItemsSource = zadania.ChartsData[15];
         }
     }
 }

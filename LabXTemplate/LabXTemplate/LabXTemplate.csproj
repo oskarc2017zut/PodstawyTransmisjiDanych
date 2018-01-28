@@ -87,6 +87,7 @@
     </ApplicationDefinition>
     <Compile Include="dft.cs" />
     <Compile Include="fft.cs" />
+    <Compile Include="Hamming.cs" />
     <Compile Include="Kluczowanie.cs" />
     <Compile Include="Demodulacja.cs" />
     <Compile Include="Zad1.cs" />

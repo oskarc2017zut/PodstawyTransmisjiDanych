@@ -14,6 +14,10 @@ namespace LabXTemplate
     partial class Zadania
     {
         List<DataPoint> dataBin = new List<DataPoint>();
+        List<DataPoint> dataCoddedBin = new List<DataPoint>();
+
+        List<DataPoint> dataDeBin = new List<DataPoint>();
+        List<DataPoint> dataDeCoddedBin = new List<DataPoint>();
 
         List<DataPoint> dataZa = new List<DataPoint>();
         List<DataPoint> dataZa_x = new List<DataPoint>();
@@ -35,22 +39,32 @@ namespace LabXTemplate
 
         public void zad1()
         {
-            int value = 15422;
+            int value = 11;
             string binary = Convert.ToString(value, 2);
 
-            bool[] m = new bool[binary.Length];
-            for (int i = 0; i < binary.Length; i++)
+            char[] binarycharArray = binary.ToArray();
+            int[] binaryIntArray = new int[binary.Length];
+            for (int i = 0; i < binaryIntArray.Length; i++)
             {
-                switch (binary[i])
+                binaryIntArray[i] = Int32.Parse(binarycharArray[i].ToString());
+            }
+            var binaryInt = getCodded(binaryIntArray);
+
+            bool[] m = new bool[binaryInt.Length];
+            for (int i = 0; i < binaryInt.Length; i++)
+            {
+                switch (binaryInt[i])
                 {
-                    case '0':
+                    case 0:
                         m[i] = false;
                         break;
-                    case '1':
+                    case 1:
                         m[i] = true;
                         break;
                 }
             }
+
+
 
             double N = 10;
             double Tb = 0.001;
@@ -93,9 +107,31 @@ namespace LabXTemplate
             for (double i = 0; i < duration; i += duration / fs)
             {
                 demod_ask(i);
-                demod_psk(i);
-                demod_fsk(i);
             }
+
+            List<int> demodList = new List<int>();
+            for (double i = duration / 8; i < duration; i += duration / 8)
+            {
+                demodList.Add((int)Math.Round(dataZa_m.FirstOrDefault(x => x.X >= i).Y));
+            }
+            //demodList[1] = 1;
+            var demodArray = demodList.ToArray();
+            var decoded = getDecoded(demodArray);
+
+            List<DataPoint> tmp = new List<DataPoint>();
+            for (int j = 0; j < decoded.Length; j++)
+            {
+                    tmp.Add(new DataPoint(j,decoded[j]));
+            }
+
+            for (double i = 0; i < duration; i += duration / fs)
+            {
+                dataCoddedBin.Add(new DataPoint(i, demodArray[(int)(Math.Floor(i * demodArray.Length))]));
+
+                dataDeCoddedBin.Add(new DataPoint(i,decoded[(int)(Math.Floor(i*decoded.Length))]));
+            }
+
+
 
             ChartsData.Add(dataBin);
 
@@ -114,6 +150,9 @@ namespace LabXTemplate
             ChartsData.Add(dataZf_x2);
             ChartsData.Add(dataZf_p);
             ChartsData.Add(dataZf_m);
+
+            ChartsData.Add(dataCoddedBin);
+            ChartsData.Add(dataDeCoddedBin);
         }
     }
 }

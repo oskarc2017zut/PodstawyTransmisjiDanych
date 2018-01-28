@@ -99,6 +99,33 @@
                                         </oxy:Plot.Series>
                                     </oxy:Plot>
                                 </TabItem>
+
+                                <TabItem Header="demod">
+                                    <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC"
+                                              Background="#FF252525" SelectionColor="#FF252526"
+                                              Foreground="Black">
+                                        <oxy:Plot.Axes>
+                                            <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom" />
+                                            <oxy:LinearAxis Title="Y" Position="Left" />
+                                        </oxy:Plot.Axes>
+                                        <oxy:Plot.Series>
+                                            <oxy:LineSeries Name="z15c" Color="White" />
+                                        </oxy:Plot.Series>
+                                    </oxy:Plot>
+                                </TabItem>
+                                <TabItem Header="decoded">
+                                    <oxy:Plot PlotAreaBorderColor="#FF1985BE" TextColor="#FF1D7CBC"
+                                              Background="#FF252525" SelectionColor="#FF252526"
+                                              Foreground="Black">
+                                        <oxy:Plot.Axes>
+                                            <oxy:LinearAxis Title="X" StringFormat="g" Position="Bottom" />
+                                            <oxy:LinearAxis Title="Y" Position="Left" />
+                                        </oxy:Plot.Axes>
+                                        <oxy:Plot.Series>
+                                            <oxy:LineSeries Name="z16c" Color="White" />
+                                        </oxy:Plot.Series>
+                                    </oxy:Plot>
+                                </TabItem>
                             </TabControl>
                         </TabItem>
 
@@ -228,7 +255,9 @@
                                         </oxy:Plot.Series>
                                     </oxy:Plot>
                                 </TabItem>
+
                             </TabControl>
+
                         </TabItem>
 
                     </TabControl>
